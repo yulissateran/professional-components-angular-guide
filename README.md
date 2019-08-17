@@ -1,15 +1,40 @@
 # Coomponents pro
 
-##INDEX
+## INDEX
+### Básico
 - Host styles 
 :host => referencia a la etiqueta que representa el componente, por ejemplo  <app-progres-bar>
 -property Binding 
+
 [style.widh.%]
 [attr.data-any] 
+
 - Event binding
+
 (onDecrease)="handleOnDecrease()"
--template ref
- 
+
+-template reference variables
+
+#countdown 
+variable que representa un componente y permite usar sus métodos y propiedades
+- lyfecycles hooks
+  - ngOnChanges
+      Útil para detectar cuando las propiedades input de un componente, han cambiado 
+  - ngOnDestroy 
+      Útil para evitar fugas de memoria, en el se pueden eliminar contadores, suscripciones y otros procesos
+
+### Intermedio
+- Componentes stateful
+   - contenedores, componentes de alto nivel
+   - guardan el estado y  pueden cambiarlo
+   - pueden acceder a servicios para obtener datos y comunicarse con otras partes de la applicación
+
+- Componentes stateless/presentacionales 
+  - No tienen estado
+  - Presentar el contenido
+  - Reporta interacciones del usuario a su componente padre
+  - puede tener un estado interno, no puede modificarlo por sí mismo
+  - la misma entrada debería generar siempre la misma salida
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
 

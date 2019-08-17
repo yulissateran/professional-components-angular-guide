@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   counterProgress: number = 0;
   totalCountdown: number = 15;
-  title = 'content-projection';
+  title = 'components-pro';
 
   updateProgress($event){
-    console.log('event', event);
+    console.log('event', $event);
     this.counterProgress = (this.totalCountdown- $event)/this.totalCountdown * 100;
   }
   countdownFinished(){
