@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProgressBarModule } from './components/progress-bar/progress-bar.module';
+import { CountdownModule } from './components/countdown/countdown.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ProgressBarModule } from './components/progress-bar/progress-bar.module
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProgressBarModule
+    ProgressBarModule,
+    CountdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

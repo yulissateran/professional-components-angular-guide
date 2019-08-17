@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  counterProgress: number = 0;
+  totalCountdown: number = 15;
   title = 'content-projection';
+
+  updateProgress($event){
+    console.log('event', event);
+    this.counterProgress = (this.totalCountdown- $event)/this.totalCountdown * 100;
+  }
+  countdownFinished(){
+    console.log('finished');
+    
+  }
 }

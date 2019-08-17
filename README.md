@@ -1,4 +1,15 @@
-# ContentProjection
+# Coomponents pro
+
+##INDEX
+- Host styles 
+:host => referencia a la etiqueta que representa el componente, por ejemplo  <app-progres-bar>
+-property Binding 
+[style.widh.%]
+[attr.data-any] 
+- Event binding
+(onDecrease)="handleOnDecrease()"
+-template ref
+ 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
 
