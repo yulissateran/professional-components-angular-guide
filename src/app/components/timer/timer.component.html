@@ -1,1 +1,3 @@
-<p>timer works!</p>
+<app-progress-bar [progress]="(init-countdown)/init*100"></app-progress-bar>
+<app-display [time]="countdown"></app-display>
+<button (click)="startCountdown()" >Reset</button>

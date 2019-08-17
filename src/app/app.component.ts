@@ -11,11 +11,9 @@ export class AppComponent {
   title = 'components-pro';
 
   updateProgress($event){
-    console.log('event', $event);
     this.counterProgress = (this.totalCountdown- $event)/this.totalCountdown * 100;
   }
   countdownFinished(){
     console.log('finished');
-    
   }
 }
