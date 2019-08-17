@@ -1,0 +1,17 @@
+/**
+host:
+la etiqueta que representa el componente, en este caso <app-progres-bar>*/
+:host {
+    border: 1px black solid;
+    width: 200px;
+    height: 30px;
+    display: block;
+    margin: 8px;
+
+    div {
+        width: 30%;
+        height: 100%;
+        background-color: #000;
+    }
+    
+}

@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FaInputModule } from './shared/components/fa-icon/fa-input.module';
-import { InputRefModule } from './shared/directives/input-ref/input-ref.module';
+import { ProgressBarModule } from './components/progress-bar/progress-bar.module';
 
 @NgModule({
   declarations: [
@@ -13,8 +12,7 @@ import { InputRefModule } from './shared/directives/input-ref/input-ref.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FaInputModule,
-    InputRefModule
+    ProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
