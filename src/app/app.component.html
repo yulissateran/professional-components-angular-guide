@@ -1,18 +1,42 @@
-
-progress  {{title}}
-
 <div>
-  <h1>Timers</h1>
-  <app-timer [init]="90"></app-timer>
+  <app-tabs>
+    <app-tab title="Timers">
+        <app-timer *ngFor="let timer of timers" [init]="timer" (onComplete)="countdownFinished()"></app-timer>
+  <button class="add" (click)="showAddTimer()">+</button>
+
+    </app-tab>
+    <app-tab title="Crono">app cronos</app-tab>
+    <app-tab title="Alarm">Alarm not avaiable</app-tab>
+  </app-tabs>
+  <app-alert-view [hidden]="!isAddTimerVisible">
+      <div header>  MY title </div>
+      <label for="">See number of seconds for your timer</label>
+      <input #timerInput [(ngModel)]="time" type="number" name="" id="">
+      <button (click)="hideAddTimer()" class="cancel-button">Cancel</button>
+      <button (click)="submitAddTimer()">Ok</button>
+  </app-alert-view>
+
+  <ng-template #timeEndTemplate let-message let-title="title">
+      <app-simple-alert-view 
+      [title]="title" 
+      [message]="message">
+      </app-simple-alert-view>
+  </ng-template>
+
+  <div
+  [ngTemplateOutlet]="timeEndTemplate"
+  [ngTemplateOutletContext]="{
+    title: 'Game over', 
+    $implicit: 'timer ended'
+  }"></div>
+
+<ng-container [ngTemplateOutlet]="timeEndTemplate">
+</ng-container>
+
 </div>
 
-<br>
-<br>
-<br>
 
-
-<app-progress-bar [progress]="counterProgress"></app-progress-bar>
-
+<!-- <app-progress-bar [progress]="counterProgress"></app-progress-bar>
 <app-countdown 
 #countdown 
 [init]="totalCountdown" 
@@ -25,7 +49,6 @@ progress  {{title}}
 name="totalCountdown"
 [(ngModel)]="totalCountdown" >
 </form>
-
 <button 
 (click)="countdown.startCountdown(); counterProgress=0" >
-Reset</button>
+Reset</button> -->

@@ -1,21 +1,64 @@
+:host {
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    h1 {
+      font-family: sans-serif;
+      width: 100%;
+      text-align: center;
+    }
+
+    app-timer {
+      flex-grow: 1;
+    }
+  }
+
+  .add {
+    position: fixed;
+    color: white;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    border: none;
+    font-size: 30px;
+    background-color: #ddd;
+
+    &:active {
+      background-color: #aaa;
+    }
+  }
+
+  .cancel-button {
+    margin-right: 10px;
+    background-color: #777;
+    &:active {
+      background-color: #444;
+    }
+  }
+  .time-in {
+    font-weight: 600;
+    color: #9932cc;
+    font-size: 12px;
+  }
+}
 h1 {
   text-align: center;
 }
-app-progress-bar, app-timer {
-    width: 100%;
-}
-button {
-    width: 100%;
-    height: 40px;
+app-progress-bar,
+app-timer {
+  width: 100%;
 }
 
 .initInput {
-  display:flex;
+  display: flex;
   input {
     margin-left: 20px;
     font-size: 20px;
     flex: 1;
     min-width: 50px;
   }
-
 }

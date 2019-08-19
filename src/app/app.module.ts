@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { ProgressBarModule } from './components/progress-bar/progress-bar.module';
 import { CountdownModule } from './components/countdown/countdown.module';
 import { TimerModule } from './components/timer/timer.module';
+import { AlertViewModule } from './components/alert-view/alert-view.module';
+import { TabsModule } from './components/tabs/tabs.module';
+import { TabModule } from './components/tab/tab.module';
+import { SimpleAlertViewModule } from './components/simple-alert-view/simple-alert-view.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { TimerModule } from './components/timer/timer.module';
     AppRoutingModule,
     ProgressBarModule,
     CountdownModule,
-    TimerModule
+    TimerModule,
+    AlertViewModule,
+    SimpleAlertViewModule,
+    TabsModule,
+    TabModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
