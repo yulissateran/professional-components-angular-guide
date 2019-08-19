@@ -89,10 +89,19 @@ variable que representa un componente y permite usar sus métodos y propiedades
 -Acceder a un componente hijo no proyectado: @ViewChild. ngAfterContentInit, changeDetector.detectChanges()
 -Acceder a una lista de componentes hijos no proyectados: @ViewChildren ,  ngAfterContentInit, changeDetector.detectChanges()
 -RENDERER 2 
-- usarlo siempre al manipular Element ref, nativeElement()
-para que tu código funcione de forma movile o renderizada desde el servidor
+  - usarlo siempre al manipular Element ref, nativeElement()
+para que tu código funcione de forma movile o renderizada desde el servidor / webworker
 
 
+
+
+- ng-container 
+  agrupar contenido sin un elemento html(wraper)
+- ng-template 
+  - se usan para crear plantillas de contenido 
+   que se pueden repetir y  recibir variables
+  - no se renderizan por si mismos, 
+  - se pueden renderizar a traves de un ng-container o algun elemento html
 
 
 
