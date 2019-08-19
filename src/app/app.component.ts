@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterContentInit, QueryList, AfterViewInit, ViewChildren, ChangeDetectorRef, ElementRef, Renderer2 } from '@angular/core';
+import { Component, ViewChild, AfterContentInit, AfterViewInit, ElementRef, Renderer2, ViewContainerRef } from '@angular/core';
 import { SimpleAlertViewComponent } from './components/simple-alert-view/simple-alert-view.component';
 
 @Component({
@@ -13,11 +13,13 @@ export class AppComponent implements AfterContentInit, AfterViewInit {
   time = 0;
   title = 'Timers';
   timers: number[];
-  @ViewChildren(SimpleAlertViewComponent,{ read: false })alerts: QueryList<SimpleAlertViewComponent>;
   @ViewChild('timerInput',{static: false})timeInput: ElementRef;
+  @ViewChild('alert',{
+    static: false, 
+    read: ViewContainerRef
+  })alertContainer: ViewContainerRef;
   
-  constructor(private changeDetector:ChangeDetectorRef,
-    private renderer: Renderer2){
+  constructor( private renderer: Renderer2){
     this.timers = [3,20,185];
   }
   ngAfterContentInit(): void {
@@ -30,13 +32,6 @@ export class AppComponent implements AfterContentInit, AfterViewInit {
       'Enter seconds' 
     );
     this.renderer.addClass(this.timeInput.nativeElement,'time-in');
-    this.alerts.forEach((item)=>{
-      if(!item.title){
-        item.title = 'hi';
-        item.message = 'hello';
-      }
-    });
-    this.changeDetector.detectChanges();
   }
 
   updateProgress($event){
@@ -58,8 +53,7 @@ export class AppComponent implements AfterContentInit, AfterViewInit {
     this.isAddTimerVisible  = false;
   }
   showEndTimerAlert(){
-    this.alerts.first.show();
-    this.alerts.last.show();
+    // this.alerts.first.show();
   }
 
   submitAddTimer(){

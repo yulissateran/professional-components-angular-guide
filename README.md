@@ -102,6 +102,7 @@ para que tu código funcione de forma movile o renderizada desde el servidor / w
    que se pueden repetir y  recibir variables
   - no se renderizan por si mismos, 
   - se pueden renderizar a traves de un ng-container o algun elemento html
+- componentes dinámicos
 
 
 

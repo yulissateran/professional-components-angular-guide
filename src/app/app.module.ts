@@ -11,6 +11,7 @@ import { AlertViewModule } from './components/alert-view/alert-view.module';
 import { TabsModule } from './components/tabs/tabs.module';
 import { TabModule } from './components/tab/tab.module';
 import { SimpleAlertViewModule } from './components/simple-alert-view/simple-alert-view.module';
+import { SimpleAlertViewComponent } from './components/simple-alert-view/simple-alert-view.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SimpleAlertViewModule } from './components/simple-alert-view/simple-ale
     TabsModule,
     TabModule,
   ],
+  entryComponents:[ SimpleAlertViewComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
